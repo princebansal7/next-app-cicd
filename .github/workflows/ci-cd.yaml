@@ -29,4 +29,4 @@ jobs:
           context: .
           push: true
           file: Dockerfile
-          tags: princebansal7/npx-app:${{ github.sha::7 }} # Short SHA for image tag
+          tags: princebansal7/npx-app:${{ github.sha }} # Short SHA for image tag
