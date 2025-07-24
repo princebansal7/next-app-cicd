@@ -30,5 +30,3 @@ jobs:
           push: true
           file: Dockerfile
           tags: princebansal7/npx-app:${{ github.sha::7 }} # Short SHA for image tag
-
-      # - name: Updating deployment in GitOps repo
