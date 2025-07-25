@@ -49,3 +49,6 @@ jobs:
           git add .
           git commit -m "Update image to ${SHORT_SHA}"
           git push https://${{ secrets.GITOPS_REPO_PAT }}@github.com/princebansal7/gitops-argocd-k8s.git
+
+      - name: Show diff
+        run: git diff deployment.yaml
