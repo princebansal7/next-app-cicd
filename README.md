@@ -8,7 +8,7 @@
   - Build and Push docker image to docker hub
   - Update the `deployment.yaml` inside `gitops-argocd-k8s/npx-app-manifest` repository with latest docker image (This repo is configured with argocd on k8s cluster which will automatically detects the change and deploys the latest app to k8s cluster)
 
-# next js app commands
+# next js app commands!
 
 First, run the development server:
 
