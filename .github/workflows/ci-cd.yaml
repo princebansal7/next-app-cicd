@@ -40,8 +40,8 @@ jobs:
           PAT: ${{ secrets.GITOPS_REPO_PAT }}
         run: |
           git clone https://github.com/princebansal7/gitops-argocd-k8s.git
-          cd gitops-argocd-k8s
-
+          cd gitops-argocd-k8s/npx-app-manifests
+          
           sed -i "s|image: princebansal7/npx-app:.*|image: princebansal7/npx-app:${{ env.SHORT_SHA }}|g" deployment.yaml
 
           git config user.name "GitHub Actions"
