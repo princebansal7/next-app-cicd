@@ -33,16 +33,16 @@ jobs:
           context: .
           push: true
           file: Dockerfile
-          tags: princebansal7/npx-app:${{ env.SHORT_SHA }} # Short SHA for image tag
+          tags: princebansal7/next-app-gitops:${{ env.SHORT_SHA }} # Short SHA for image tag
       
       - name: Deploy to K8s using GitOps repository
         env:
           PAT: ${{ secrets.GITOPS_REPO_PAT }}
         run: |
           git clone https://github.com/princebansal7/gitops-argocd-k8s.git
-          cd gitops-argocd-k8s/npx-app-manifests
+          cd gitops-argocd-k8s/next-app-manifests
 
-          sed -i "s|image: princebansal7/npx-app:.*|image: princebansal7/npx-app:${{ env.SHORT_SHA }}|g" deployment.yaml
+          sed -i "s|image: princebansal7/next-app-gitops:.*|image: princebansal7/next-app-gitops:${{ env.SHORT_SHA }}|g" deployment.yaml
 
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
